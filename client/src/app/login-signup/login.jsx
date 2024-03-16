@@ -1,23 +1,76 @@
 import { FcGoogle } from "react-icons/fc";
+import { useFormik } from "formik";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import * as Yup from "yup"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Login() {
-    return(
-        <form action="#" className="sign-in-form">
-            <h2 className="title">Sign in</h2>
-            <div className="input-field">
-              <i className="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div className="input-field">
-              <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" className="btn solid" />
-            <p className="social-text">Or Sign in with Google</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-              <FcGoogle />
-              </a>
-            </div>
-          </form>
-    )
+  let [disable, setDisable] = useState(false)
+  const router = useRouter();
+  const schema = Yup.object({
+    email: Yup.string().email().required(),
+    password: Yup.string().required().matches(/[a-zA-Z0-9]/).min(8)
+  })
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: ""
+    },
+    validationSchema: schema,
+    onSubmit: async (values) => {
+      try {
+        setDisable(true)
+        router.push('/chats')
+        toast.success("Welcome to user pannel")
+
+        // let auth_svc = new AuthService()
+        // let loginResponse = await auth_svc.login(values)
+        // if (loginResponse) {
+        //     dispatch(userStore(loginResponse))
+        //     if (loginResponse.role === "admin") {
+        //         toast.success("Welcome to user pannel")
+        //         navigate("/" + loginResponse.role)
+        //     } else if (loginResponse.role === 'customer') {
+        //         navigate("/customer/profile")
+        //     }
+        // }
+      } catch (err) {
+        console.log("Respone: ", err)
+        toast.error(err.msg)
+      } finally {
+        setDisable(false)
+      }
+    }
+  })
+
+  return (
+    <form className="sign-in-form" onSubmit={formik.handleSubmit}>
+      <h2 className="title">Sign in</h2>
+      <div className="input-field">
+        <i className="fas fa-user"></i>
+        <input type="email" name="email" placeholder="Username" onChange={formik.handleChange} />
+        <span className="text-danger">
+          {formik?.errors?.email}
+        </span>
+      </div>
+      <div className="input-field">
+        <i className="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" onChange={formik.handleChange} />
+        <span className="text-danger">
+          {formik?.errors?.password}
+        </span>
+      </div>
+      <button type="submit" className="btn solid" disabled={disable}>
+        Login
+        </button>
+      <p className="social-text">Or Sign in with Google</p>
+      <div className="social-media">
+        <a href="#" className="social-icon">
+          <FcGoogle />
+        </a>
+      </div>
+    </form>
+  )
 }

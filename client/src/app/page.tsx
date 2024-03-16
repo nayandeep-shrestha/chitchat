@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import './login-signup/login-sign.css';
-import { FcGoogle } from "react-icons/fc";
+import { ToastContainer } from "react-toastify"
 import Login from './login-signup/login'
 import SignIn from './login-signup/signIn'
 
@@ -14,6 +14,7 @@ export default function Home() {
   }
   
   return (
+    <><ToastContainer autoClose={3000} />
          <div className="container">
       <div className="forms-container">
         <div className="signin-signup">
@@ -55,6 +56,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-
+    </>
   );
 }
