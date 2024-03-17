@@ -1,25 +1,12 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body,
-input {
-  font-family: "Poppins", sans-serif;
-}
-
-.container {
+.login-signup-container{
   position: relative;
   width: 100%;
   background-color: #fff;
   min-height: 100vh;
   overflow: hidden;
 }
-
 .forms-container {
   position: absolute;
   width: 100%;
@@ -80,12 +67,15 @@ form.sign-in-form {
   position: relative;
 }
 
-.input-field i {
-  text-align: center;
-  line-height: 55px;
+.input-field-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* text-align: center;
+  line-height: 55px; */
   color: #acacac;
   transition: 0.5s;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .input-field input {
@@ -132,7 +122,6 @@ form.sign-in-form {
   color: #4481eb;
   border-color: #4481eb;
 }
-
 .btn {
   width: 150px;
   background-color: #5995fd;
@@ -161,7 +150,7 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.container:before {
+.login-signup-container:before {
   content: "";
   position: absolute;
   height: 2000px;
@@ -234,45 +223,45 @@ form.sign-in-form {
 
 /* ANIMATION */
 
-.container.sign-up-mode:before {
+.login-signup-container.sign-up-mode:before {
   transform: translate(100%, -50%);
   right: 52%;
 }
 
-.container.sign-up-mode .left-panel .image,
-.container.sign-up-mode .left-panel .content {
+.login-signup-container.sign-up-mode .left-panel .image,
+.login-signup-container.sign-up-mode .left-panel .content {
   transform: translateX(-800px);
 }
 
-.container.sign-up-mode .signin-signup {
+.login-signup-container.sign-up-mode .signin-signup {
   left: 25%;
 }
 
-.container.sign-up-mode form.sign-up-form {
+.login-signup-container.sign-up-mode form.sign-up-form {
   opacity: 1;
   z-index: 2;
 }
 
-.container.sign-up-mode form.sign-in-form {
+.login-signup-container.sign-up-mode form.sign-in-form {
   opacity: 0;
   z-index: 1;
 }
 
-.container.sign-up-mode .right-panel .image,
-.container.sign-up-mode .right-panel .content {
+.login-signup-container.sign-up-mode .right-panel .image,
+.login-signup-container.sign-up-mode .right-panel .content {
   transform: translateX(0%);
 }
 
-.container.sign-up-mode .left-panel {
+.login-signup-container.sign-up-mode .left-panel {
   pointer-events: none;
 }
 
-.container.sign-up-mode .right-panel {
+.login-signup-container.sign-up-mode .right-panel {
   pointer-events: all;
 }
 
 @media (max-width: 870px) {
-  .container {
+  .login-signup-container {
     min-height: 800px;
     height: 100vh;
   }
@@ -284,7 +273,7 @@ form.sign-in-form {
   }
 
   .signin-signup,
-  .container.sign-up-mode .signin-signup {
+  .login-signup-container.sign-up-mode .signin-signup {
     left: 50%;
   }
 
@@ -336,7 +325,7 @@ form.sign-in-form {
     font-size: 0.7rem;
   }
 
-  .container:before {
+  .login-signup-container:before {
     width: 1500px;
     height: 1500px;
     transform: translateX(-50%);
@@ -347,19 +336,19 @@ form.sign-in-form {
     transition: 2s ease-in-out;
   }
 
-  .container.sign-up-mode:before {
+  .login-signup-container.sign-up-mode:before {
     transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
   }
 
-  .container.sign-up-mode .left-panel .image,
-  .container.sign-up-mode .left-panel .content {
+  .login-signup-container.sign-up-mode .left-panel .image,
+  .login-signup-container.sign-up-mode .left-panel .content {
     transform: translateY(-300px);
   }
 
-  .container.sign-up-mode .right-panel .image,
-  .container.sign-up-mode .right-panel .content {
+  .login-signup-container.sign-up-mode .right-panel .image,
+  .login-signup-container.sign-up-mode .right-panel .content {
     transform: translateY(0px);
   }
 
@@ -368,7 +357,7 @@ form.sign-in-form {
     transform: translateY(300px);
   }
 
-  .container.sign-up-mode .signin-signup {
+  .login-signup-container.sign-up-mode .signin-signup {
     top: 5%;
     transform: translate(-50%, 0);
   }
@@ -385,16 +374,16 @@ form.sign-in-form {
   .panel .content {
     padding: 0.5rem 1rem;
   }
-  .container {
+  .login-signup-container {
     padding: 1.5rem;
   }
 
-  .container:before {
+  .login-signup-container:before {
     bottom: 72%;
     left: 50%;
   }
 
-  .container.sign-up-mode:before {
+  .login-signup-container.sign-up-mode:before {
     bottom: 28%;
     left: 50%;
   }

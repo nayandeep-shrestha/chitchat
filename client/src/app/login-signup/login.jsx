@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import * as Yup from "yup"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import {FaEnvelope, FaLock } from "react-icons/fa";
 
 export default function Login() {
   let [disable, setDisable] = useState(false)
@@ -49,19 +50,23 @@ export default function Login() {
     <form className="sign-in-form" onSubmit={formik.handleSubmit}>
       <h2 className="title">Sign in</h2>
       <div className="input-field">
-        <i className="fas fa-user"></i>
-        <input type="email" name="email" placeholder="Username" onChange={formik.handleChange} />
-        <span className="text-danger">
+      <div className="input-field-icon">
+          <FaEnvelope/>
+          </div>
+        <input type="email" name="email" placeholder="Email" onChange={formik.handleChange} />
+      </div>
+        <span className="text-red-400">
           {formik?.errors?.email}
         </span>
-      </div>
       <div className="input-field">
-        <i className="fas fa-lock"></i>
+      <div className="input-field-icon">
+          <FaLock/>
+          </div>
         <input type="password" name="password" placeholder="Password" onChange={formik.handleChange} />
-        <span className="text-danger">
+      </div>
+        <span className="text-red-400">
           {formik?.errors?.password}
         </span>
-      </div>
       <button type="submit" className="btn solid" disabled={disable}>
         Login
         </button>
