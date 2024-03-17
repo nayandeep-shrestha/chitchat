@@ -1,6 +1,6 @@
 'use client';
 import { ToastContainer } from "react-toastify"
-import LoginSignup from './login-signup/loginSignup'
+import LoginSignup from '../components/login-signup/loginSignup'
 
 export default function Home() {
   
