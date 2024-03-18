@@ -155,3 +155,15 @@ export const messagesData = [
     sent: false,
   },
 ];
+
+export const messageOptions=[
+  {
+    title: 'Reply'
+  },
+  {
+    title: 'React'
+  },
+  {
+    title: 'Delete'
+  },
+]
