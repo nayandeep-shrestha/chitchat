@@ -5,8 +5,8 @@ function Chat({ pp, contact, msg, time, unreadMsgs, active }) {
   return (
     // Chat container
     <div
-      className={`flex justify-between items-center cursor-pointer w-full h-[85px] px-3 hover:bg-[#202d33] ${
-        active ? "bg-[#202d33]" : ""
+      className={`flex justify-between items-center cursor-pointer w-full h-[85px] px-3 hover:bg-[#f0f2f5] ${
+        active ? "bg-[#f0f2f5]" : ""
       }`}
     >
       {/* Profile picture */}
@@ -17,14 +17,14 @@ function Chat({ pp, contact, msg, time, unreadMsgs, active }) {
       />
 
       {/* Info container */}
-      <div className="flex justify-between border-t border-neutral-700 w-full h-full py-3">
+      <div className="flex justify-between border-t border-[#e9edef] w-full h-full py-3">
         {/* Contact name and message */}
-        <div className="flex flex-col justify-between text-white">
+        <div className="flex flex-col justify-between text-[#111b21]">
           {/* Contact name */}
-          <h1 className="font-medium mb-1">{contact}</h1>
-
+          <h1 className={`mb-1 ${!unreadMsgs ? "text-[#111b21] font-medium" : "text-[#121e25] font-semibold"}`}>{contact}</h1>
+        
           {/* Message */}
-          <p className={`text-sm ${!unreadMsgs ? "text-neutral-400" : ""}`}>
+          <p className={`text-sm ${!unreadMsgs ? "text-[#667781]" : "text-[#121e25] "}`}>
             {msg}
           </p>
         </div>

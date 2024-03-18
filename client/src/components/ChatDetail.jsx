@@ -74,7 +74,7 @@ function ChatDetail() {
     // ChatDetail main container
     <div className="flex flex-col h-screen">
       {/* Contact nav */}
-      <div className="flex justify-between bg-[#202d33] h-[60px] p-3">
+      <div className="flex justify-between bg-[#f0f2f5]  h-[60px] p-3">
         {/* Contact info */}
         <div className="flex items-center">
           {/* Profile picture */}
@@ -87,7 +87,7 @@ function ChatDetail() {
           {/* Info */}
           <div className="flex flex-col">
             {/* Contact */}
-            <h1 className="text-white font-medium">Coding Spot</h1>
+            <h1 className="text-[#111b21] font-medium">Coding Spot</h1>
 
             {/* Status */}
             <p className="text-[#8796a1] text-xs">online</p>
@@ -103,7 +103,7 @@ function ChatDetail() {
 
       {/* Messages section */}
       <div
-        className="bg-[#0a131a] bg-contain overflow-y-scroll h-full"
+        className="bg-[#f1ece5] overflow-y-scroll h-full"
         style={{ padding: "12px 7%" }}
       >
         {messages.map((msg) => (
@@ -119,7 +119,7 @@ function ChatDetail() {
       </div>
 
       {/* Bottom section */}
-      <div className="flex items-center bg-[#202d33] w-full h-[70px] p-2">
+      <div className="flex items-center bg-[#f0f2f5] w-full h-[70px] p-2">
         {/* Emoji btn */}
         <RoundedBtn icon={<BiHappy />} onClick={handleEmojiClick} />
 
@@ -132,7 +132,7 @@ function ChatDetail() {
         <input
           type="text"
           placeholder="Type a message"
-          className="bg-[#2c3943] rounded-lg outline-none text-sm text-neutral-200 w-full h-full px-3 placeholder:text-sm placeholder:text-[#8796a1]"
+          className="bg-white rounded-lg outline-none text-sm text-[#7b8b9e] w-full h-full px-3 placeholder:text-sm placeholder:text-[#7b8b9e]"
           onChange={handleInputChange}
           ref={inputRef}
         />
