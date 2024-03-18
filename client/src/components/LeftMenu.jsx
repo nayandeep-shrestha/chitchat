@@ -1,37 +1,26 @@
 import React, { useState } from "react";
 import Chats from "./Chats";
-import RoundedBtn from "./Common/RoundedBtn";
-import { MdPeopleAlt } from "react-icons/md";
-import { TbCircleDashed } from "react-icons/tb";
-import { BsFillChatLeftTextFill } from "react-icons/bs";
-import { HiDotsVertical } from "react-icons/hi";
+import { FiEdit } from "react-icons/fi";
 import { BiFilter } from "react-icons/bi";
-import { pp } from "../assets/whatsapp";
-import Image from 'next/image'
+import { FaGear } from "react-icons/fa6";
+import { appName,chat8 } from "../assets/whatsapp";
+import Image from 'next/image';
 
 function LeftMenu() {
   const [filter, setFilter] = useState(false);
 
   return (
     // LeftMenu container
-    <div className="flex flex-col border-r border-neutral-100 w-full h-screen">
-      {/* Profile nav */}
+    <div className="flex flex-col border-r border-neutral-300 w-full h-screen">
+      {/* topbar*/}
       <div className="flex justify-between items-center bg-[#f0f2f5] h-[60px] p-3">
-        {/* Profile picture */}
-        <Image src={pp} alt="profile_picture" className="rounded-full w-[40px]" />
-
-        {/* Profile nav buttons */}
-        <div className="flex justify-between w-[175px]">
-          <RoundedBtn icon={<MdPeopleAlt />} />
-          <RoundedBtn icon={<TbCircleDashed />} />
-          <RoundedBtn icon={<BsFillChatLeftTextFill />} />
-          <RoundedBtn icon={<HiDotsVertical />} />
-        </div>
+        {/* AppName*/}
+        {/* <Image src={appLogo} alt="profile_picture" className="rounded-full w-[50px]" /> */}
+        <Image src={appName} className="w-[200px]"/>
+        {/* Group button */}
+        <FiEdit className="text-[#8796a1] text-[40px] p-2  hover:text-[#616b71] hover:cursor-pointer"/> 
       </div>
-{/*
-    transition: box-shadow .18s ease-out, background-color .25s ease-out;
 
-*/}
       {/* Search and filter */}
       <div className="flex justify-between items-center h-[60px] p-2 bg-white transition-shadow">
         {/* Search input */}
@@ -45,8 +34,8 @@ function LeftMenu() {
         <button
           className={`text-2xl m-2 p-1 rounded-full ${
             filter
-              ? "bg-emerald-500 text-white rounded-full hover:bg-emerald-700"
-              : "text-[#8796a1] hover:bg-[#3c454c]"
+              ? "bg-[#e0b1f5] text-white rounded-full hover:bg-[#8b43ad]"
+              : "text-[#8796a1] hover:text-[#4b5257]"
           }`}
           onClick={() => setFilter(!filter)}
         >
@@ -56,6 +45,17 @@ function LeftMenu() {
 
       {/* Chats */}
       <Chats filter={filter} />
+
+      {/* bottom bar */}
+      <div className="flex justify-between items-center bg-[#f0f2f5] w-full h-[60px] p-3">
+        <div className="flex justify-evenly items-center flex-60">
+          <Image src={chat8} className="rounded-full w-[45px]"/>
+          <h1 className={`mb-1 text-[#111b21] font-medium`}>Nayandeep Shrestha</h1>
+        </div>
+        <div>
+        <FaGear className="text-[#8796a1] text-[40px] p-2  hover:text-[#616b71] hover:cursor-pointer hover:rotate-90 duration-300" />
+        </div>
+      </div>
     </div>
   );
 }

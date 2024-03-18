@@ -6,7 +6,7 @@ function Message({ msg, time, isLink, img, sent }) {
     // Message container
     <div
       className={`flex justify-center items-center rounded-md w-fit my-1 ${
-        sent ? "bg-[#d9fdd3] ml-auto" : "bg-[#ffffff] mr-auto"
+        sent ? "bg-[#e9bffd] ml-auto" : "bg-[#ffffff] mr-auto"
       }`}
     >
       {/* Image message */}

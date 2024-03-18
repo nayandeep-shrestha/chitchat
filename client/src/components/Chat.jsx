@@ -32,12 +32,12 @@ function Chat({ pp, contact, msg, time, unreadMsgs, active }) {
         {/* Time and number of messages*/}
         <div className="flex flex-col justify-between items-end h-100 text-xs">
           {/* Time */}
-          <p className="text-emerald-500 min-w-[55px]">{time}</p>
+          <p className="text-[#d377fd] min-w-[55px]">{time}</p>
 
           {/* Number of messages */}
           {unreadMsgs && (
-            <div className="flex justify-center items-center bg-emerald-500 rounded-full w-[20px] h-[20px]">
-              <p className="text-emerald-900">{unreadMsgs}</p>
+            <div className="flex justify-center items-center bg-[#e9bffd] rounded-full w-[20px] h-[20px]">
+              <p className="text-[#6a2a88]">{unreadMsgs}</p>
             </div>
           )}
         </div>

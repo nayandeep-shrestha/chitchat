@@ -14,6 +14,8 @@ import chat10 from "./images/chat10.png";
 import chat11 from "./images/chat11.png";
 import chat12 from "./images/chat12.png";
 import chat13 from "./images/chat13.png";
+import appLogo from './images/appLogo.png'
+import appName from './images/appName.png'
 
 export {
   pp,
@@ -32,4 +34,6 @@ export {
   chat11,
   chat12,
   chat13,
+  appLogo,
+  appName
 };

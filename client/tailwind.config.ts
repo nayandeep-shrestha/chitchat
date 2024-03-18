@@ -12,7 +12,8 @@ const config: Config = {
         "whatsapp-bp": "755px",
       },
       flex:{
-        '2':'0 0 30%'
+        '2':'0 0 30%',
+        '60':'0 0 60%'
       },
     },
   },
