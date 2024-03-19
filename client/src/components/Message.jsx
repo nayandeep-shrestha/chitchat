@@ -74,7 +74,7 @@ function Message({ msg, time, isLink, file, sent }) {
             )}
             <p className="text-[#8796a1] text-[12px] min-w-[50px] absolute right-[-10px] bottom-0 mt-3">{time}</p>
             <div>
-              <div className="rounded-full bg-white w-fit h-fit flex items-center absolute top-[92%] right-[-10px]">
+              <div className="rounded-full bg-white w-fit h-fit flex items-center absolute top-[92%] right-[-15px]">
                 {reactEmoji}
               </div>
             </div>
@@ -95,10 +95,6 @@ function Message({ msg, time, isLink, file, sent }) {
           <Picker reactionsDefaultOpen={true} onReactionClick={handleReaction}></Picker>
         </div>
       </div>
-
-
-
-
 
       <Menu
         id="basic-menu"

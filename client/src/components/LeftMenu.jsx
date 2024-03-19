@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import Chats from "./Chats";
 import { FiEdit } from "react-icons/fi";
@@ -6,8 +7,11 @@ import { FaGear } from "react-icons/fa6";
 import { appName,chat8 } from "../assets/whatsapp";
 import Image from 'next/image';
 
-function LeftMenu() {
+function LeftMenu({slide}) {
   const [filter, setFilter] = useState(false);
+  const handleSlide = () => {
+    slide(true);
+  }
 
   return (
     // LeftMenu container
@@ -49,7 +53,7 @@ function LeftMenu() {
       {/* bottom bar */}
       <div className="flex justify-between items-center bg-[#f0f2f5] w-full h-[60px] p-3">
         <div className="flex justify-evenly items-center flex-60">
-          <Image src={chat8} className="rounded-full w-[45px]"/>
+          <Image src={chat8} className="rounded-full w-[45px]" onClick={handleSlide}/>
           <h1 className={`mb-1 text-[#111b21] font-medium`}>Nayandeep Shrestha</h1>
         </div>
         <div>
