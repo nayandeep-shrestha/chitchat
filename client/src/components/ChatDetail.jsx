@@ -118,6 +118,7 @@ function ChatDetail() {
       <div
         className="bg-[#f1ece5] overflow-y-scroll h-full"
         style={{ padding: "12px 7%" }}
+        onClick={() => {}}
       >
         {messages.map((msg) => (
           <Message
