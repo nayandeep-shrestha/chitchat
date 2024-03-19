@@ -12,6 +12,7 @@ import { getTime } from "../logic/whatsapp";
 import Image from "next/image";
 import Picker from 'emoji-picker-react';
 import FAB from '../components/Common/FAB'
+import { Paper } from "@mui/material";
 
 
 function ChatDetail() {
@@ -19,7 +20,11 @@ function ChatDetail() {
   const [showEmojis, setShowEmojis] = useState(false)
   const [uploadIcon, setUploadIcon] = useState(false)
   const [message, setMessage] = useState('')
+  const [file, setFile] = useState('')
+  const [showFileChooser, setShowFileChooser] = useState(false)
   const [cursorPosition, setCursorPosition] = useState()
+  const fileRef = useRef(null);
+  const imgRef = useRef(null);
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
 
@@ -46,13 +51,17 @@ function ChatDetail() {
   }
 
   const handleInputSubmit = () => {
-    if (inputRef.current.value.length > 0) {
+    console.log(file)
+    if (inputRef.current.value.length > 0 || file) {
+
       addMessage({
         msg: inputRef.current.value,
+        file:file,
         time: getTime(),
         sent: true,
       });
       inputRef.current.value = " ";
+      setFile('')
       inputRef.current.focus();
     }
   };
@@ -115,18 +124,13 @@ function ChatDetail() {
             msg={msg.msg}
             time={msg.time}
             isLink={msg.isLink}
-            img={msg.img}
+            file={msg.file}
             sent={msg.sent}
           />
         ))}
         <div ref={bottomRef} />
       </div>
-      <span>
-
-
-      </span>
-
-
+      
       {/* Bottom section */}
       <div className="flex items-center bg-[#f0f2f5] w-full h-[70px] p-2">
         {/* Input bar */}
@@ -159,8 +163,20 @@ function ChatDetail() {
           <Picker open={showEmojis} onEmojiClick={onEmojiClick} />
         </div>
         <div className={`z-10 fixed bottom-[65px] flex flex-col gap-2 ${uploadIcon? 'block':'hidden' }`}>
-          <FAB icon={<MdOutlineInsertDriveFile className="w-6 h-6 inline-block text-white" />}/>
-          <FAB icon={<IoImageOutline className="w-6 h-6 inline-block text-white"  />}/>
+          <FAB icon={<MdOutlineInsertDriveFile className="w-6 h-6 inline-block text-white" id="doc" onClick={() => fileRef.current.click()} />}/>
+          <FAB icon={<IoImageOutline className="w-6 h-6 inline-block text-white" id="media" onClick={() => imgRef.current.click()} />}/>
+
+          <input type="file" className="hidden" ref={fileRef} />
+          <input type="file" onChange={(e)=> setFile(URL.createObjectURL(e.target.files[0]))} accept="image/*" className="hidden" ref={imgRef} />
+            
+           {file? 
+            <Paper>
+              <img src={file} alt="" className="w-[70px] p-2" />
+            </Paper>
+           :
+           ""
+          } 
+        
         </div>
         {/* Send btn */}
         <span className="ml-2">
