@@ -18,7 +18,6 @@
   
   .slide-in {
     animation: slideIn 1s forwards;
-    display: block;
   }
   
   .slide-out {
