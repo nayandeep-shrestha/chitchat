@@ -1,5 +1,7 @@
 'use client'
 import React, { useState } from "react";
+import {useDispatch, useSelector} from 'react-redux'
+import { pView, sView } from "../reducers/settings.slicer";
 import Chats from "./Chats";
 import Profile from '../components/Profile'
 import Settings from '../components/Settings'
@@ -10,26 +12,34 @@ import { appName, chat8 } from "../assets/whatsapp";
 import Image from 'next/image';
 import '../app/chats/profile.css'
 
-function LeftMenu({ slide }) {
+import ChatColor from './ChatColor'
+
+function LeftMenu() {
+  const dispatch = useDispatch();
   const [filter, setFilter] = useState(false);
-  const [profileView, setProfileView] = useState(false)
-  const [settingsView, setSettingsView] = useState(false)
+  const view = useSelector((state) => {
+    return state.settings.view
+  })
+  const prView = useSelector((state) => {
+    return state.settings.prView
+  })
+  const chatColorView = useSelector((state) => {
+    return state.settings.chatcolor
+  })
   const handleProfile = (e) => {
     e.preventDefault()
-    setProfileView(true)
+    dispatch(pView(true))
   }
   const handleSettings = (e) => {
     e.preventDefault()
-    setSettingsView(true)
+    dispatch(sView(true))
+    
   }
-  const handleChats = (data)=>{
-    setProfileView(false)
-    setSettingsView(false)
-  }
+  
   return (
     // LeftMenu container
     <div className="bg-[#e3e1dd]  h-screen w-full flex-2 relative overflow-hidden">
-      <div className={`${profileView || settingsView ? 'hidden' : 'block'}  flex flex-col border-r border-neutral-300 w-full h-screen`}>
+      <div className={`${prView || view || chatColorView? 'hidden' : 'block'}  flex flex-col border-r border-neutral-300 w-full h-screen`}>
 
         <div className="flex justify-between items-center bg-[#f0f2f5] h-[60px] p-3">
 
@@ -70,8 +80,10 @@ function LeftMenu({ slide }) {
         </div>
       </div>
 
-      <Profile profileView={profileView} handleChats={handleChats}/>
-      <Settings settingsView= {settingsView} handleChats={handleChats}/>
+      <Profile />
+      <Settings/>
+
+      <ChatColor />
     </div>
   );
 }

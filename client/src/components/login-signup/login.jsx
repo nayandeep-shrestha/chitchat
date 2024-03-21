@@ -24,7 +24,7 @@ export default function Login() {
       try {
         setDisable(true)
         router.push('/chats')
-        toast.success("Welcome to user pannel")
+        toast.success("Welcome to ChitChat")
 
         // let auth_svc = new AuthService()
         // let loginResponse = await auth_svc.login(values)

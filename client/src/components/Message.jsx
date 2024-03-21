@@ -6,7 +6,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Picker from 'emoji-picker-react';
 
-function Message({ msg, time, isLink, file, sent }) {
+function Message({ msg, time, isLink, file, sent, }) {
   const [showReaction, setShowReaction] = useState(false)
   const [reactEmoji, setReactEmoji] = useState('')
   const [anchorEl, setAnchorEl] = useState(null);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Message from "./Message";
 import RoundedBtn from "./Common/RoundedBtn";
 import { messagesData } from "../data/whatsapp";
@@ -21,12 +22,11 @@ function ChatDetail() {
   const [uploadIcon, setUploadIcon] = useState(false)
   const [message, setMessage] = useState('')
   const [file, setFile] = useState('')
-  const [showFileChooser, setShowFileChooser] = useState(false)
-  const [cursorPosition, setCursorPosition] = useState()
   const fileRef = useRef(null);
   const imgRef = useRef(null);
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
+  const chatColor = useSelector((state) => {return state.colors.selectedColor})
 
   // Functions
 
@@ -35,19 +35,10 @@ function ChatDetail() {
     setMessages(newMessages);
   };
 
-  // const handleImgUpload = () => {
-  //   addMessage({
-  //     img: cs2,
-  //     time: getTime(),
-  //     sent: true,
-  //   });
-  // };
-
   const onEmojiClick = ({ emoji }) => {
     const { selectionStart, selectionEnd } = inputRef.current;
     const newValue = message.slice(0, selectionStart) + emoji + message.slice(selectionEnd);
     setMessage(newValue);
-    // setCursorPosition(start.length + emoji.length);
   }
 
   const handleInputSubmit = () => {
@@ -79,9 +70,6 @@ function ChatDetail() {
     document.addEventListener("keydown", listener);
     return () => document.removeEventListener("keydown", listener);
   });
-  useEffect(() => {
-    inputRef.current.selestionEnd = cursorPosition;
-  }, [cursorPosition])
 
   return (
     // ChatDetail main container
@@ -116,7 +104,7 @@ function ChatDetail() {
 
       {/* Messages section */}
       <div
-        className="bg-[#f1ece5] overflow-y-scroll h-full"
+        className={`bg-[${chatColor}] overflow-y-scroll h-full`}
         style={{ padding: "12px 7%" }}
         onClick={() => {}}
       >

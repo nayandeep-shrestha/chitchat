@@ -5,7 +5,9 @@ import LoginSignup from '../components/login-signup/loginSignup'
 export default function Home() {
   
   return (
-    <><ToastContainer autoClose={3000} />
+    <>
+    
+    <ToastContainer autoClose={3000} />
     <LoginSignup/>
     </>
   );

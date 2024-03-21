@@ -18,10 +18,17 @@ import {
 
 export const chatsData = [
   {
-    pp: cs1,
-    contact: "Coding Spot",
+    pp: chat10,
+    contact: "Abhishek",
     msg: "Awesome, thank you!",
     time: "1:15 pm",
+    unreadMsgs: null,
+  },
+  {
+    contact: "Nischal",
+    pp: chat7,
+    msg: "hahhahhaha lol 😂😂😂",
+    time: "10:18 am",
     unreadMsgs: null,
   },
   {
@@ -30,13 +37,6 @@ export const chatsData = [
     msg: "Coding Spot is fire! 🔥",
     time: "12:15 pm",
     unreadMsgs: 2,
-  },
-  {
-    pp: chat2,
-    contact: "Girlfriend ❤️",
-    msg: "Miss you, call you later!",
-    time: "11:11 am",
-    unreadMsgs: 4,
   },
   {
     pp: chat3,
@@ -65,13 +65,6 @@ export const chatsData = [
     msg: "Call me son, love you. ❤️",
     time: "10:35 am",
     unreadMsgs: 2,
-  },
-  {
-    pp: chat7,
-    contact: "Johnny",
-    msg: "hahhahhaha lol 😂😂😂",
-    time: "10:18 am",
-    unreadMsgs: null,
   },
 
 ];
