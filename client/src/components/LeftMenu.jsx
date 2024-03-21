@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import {useDispatch, useSelector} from 'react-redux'
 import { pView, sView } from "../reducers/settings.slicer";
+import ChatColor from './ChatColor'
 import Chats from "./Chats";
 import Profile from '../components/Profile'
 import Settings from '../components/Settings'
@@ -12,7 +13,6 @@ import { appName, chat8 } from "../assets/whatsapp";
 import Image from 'next/image';
 import '../app/chats/profile.css'
 
-import ChatColor from './ChatColor'
 
 function LeftMenu() {
   const dispatch = useDispatch();
@@ -82,8 +82,7 @@ function LeftMenu() {
 
       <Profile />
       <Settings/>
-
-      <ChatColor />
+      <ChatColor/>
     </div>
   );
 }

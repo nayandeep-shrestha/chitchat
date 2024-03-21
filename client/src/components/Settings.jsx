@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {sView, chatColor} from '../reducers/settings.slicer'
+import {pView, sView, chatColor} from '../reducers/settings.slicer'
 import Image from 'next/image';
 import { FaArrowLeft, FaBell } from "react-icons/fa";
 import { MdLock, MdColorLens,MdOutlineHelpOutline } from "react-icons/md";
@@ -12,10 +12,15 @@ export default function Settings() {
         return state.settings.view;
     })
     const handleClick = () => dispatch(sView(false))
-    const handleChatColorView = () => {
+    const handleChatColorView = (e) => {
+        e.preventDefault();
         dispatch(chatColor(true))
         dispatch(sView(false))
     }
+    const handleProfile = (e) => {
+        e.preventDefault()
+        dispatch(pView(true))
+      }
     return (
         <div className={`${view ? 'block' : 'hidden'}  flex flex-col border-r border-neutral-300 w-full h-screen bg-white`}>
             <div className="flex w-full items-end bg-[linear-gradient(90deg,_rgba(236,15,227,1)_0%,_rgba(117,223,246,1)_100%)] h-[100px] px-[25px] gap-2">
@@ -37,7 +42,7 @@ export default function Settings() {
             </div>
 
             {/* Profile Name */}
-            <div className="flex flex-row my-5 mx-8 gap-6" >
+            <div className="flex flex-row py-5 px-8 gap-6 hover:cursor-pointer hover:bg-[#f0f2f5]" onClick={handleProfile}>
                 <div className="rounded-full w-fit h-fit">
                     <Image src={chat8} width={50} height={50} />
                 </div>

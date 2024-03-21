@@ -27,7 +27,6 @@ function ChatDetail() {
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
   const chatColor = useSelector((state) => {return state.colors.selectedColor})
-
   // Functions
 
   const addMessage = (msg) => {
@@ -104,12 +103,12 @@ function ChatDetail() {
 
       {/* Messages section */}
       <div
-        className={`bg-[${chatColor}] overflow-y-scroll h-full`}
-        style={{ padding: "12px 7%" }}
+        className={`overflow-y-scroll h-full`}
+        style={{ padding: "12px 7%", backgroundColor: chatColor}}
         onClick={() => {}}
       >
-        {messages.map((msg) => (
-          <Message
+        {messages.map((msg, index) => (
+          <Message key={index}
             msg={msg.msg}
             time={msg.time}
             isLink={msg.isLink}

@@ -10,7 +10,7 @@ const ColorSlicer = createSlice({
             state.selectedColor = action.payload
         },
     }
-})
+});
 
 export const {setColor} = ColorSlicer.actions
 export default ColorSlicer.reducer
