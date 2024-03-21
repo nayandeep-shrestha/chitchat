@@ -4,17 +4,16 @@ import { IoMdCheckmark } from "react-icons/io";
 import { chat8 } from "../assets/whatsapp";
 import Image from 'next/image'
 import '../app/chats/profile.css'
-export default function Profile({ profileSlide }) {
-    console.log(profileSlide)
+export default function Profile({ profileView, handleChats }) {
     const [nameInput, setNameInput] = useState(true)
     const [aboutInput, setAboutInput] = useState(true)
     const [profileName, setProfileName] = useState('')
     const [profileAbout, setProfileAbout] = useState('')
     return (
-        <div className={`"absolute top-0 right-0 flex flex-col border-r border-neutral-300 w-full h-screen bg-neutral-200"`}>
+        <div className={`${profileView? 'block' : 'hidden'} flex flex-col border-r border-neutral-300 w-full h-screen bg-neutral-200`}>
             <div className="flex w-full items-end bg-[linear-gradient(90deg,_rgba(236,15,227,1)_0%,_rgba(117,223,246,1)_100%)] h-[100px] px-[25px] gap-2">
-                <div className="text-white py-5">
-                    <FaArrowLeft onClick={() => profileSlide = false} />
+                <div className="text-white py-5 hover:cursor-pointer">
+                    <FaArrowLeft onClick={() => handleChats(true)} />
                 </div>
                 <p className="text-2xl text-white pb-3 px-2">
                     Profile

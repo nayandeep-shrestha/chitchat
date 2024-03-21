@@ -4,12 +4,12 @@ import { FaArrowLeft, FaBell } from "react-icons/fa";
 import { MdLock, MdColorLens,MdOutlineHelpOutline } from "react-icons/md";
 import { IoMdLogOut } from "react-icons/io";
 import { chat8 } from "../assets/whatsapp";
-export default function Settings() {
+export default function Settings({settingsView, handleChats}) {
     return (
-        <div className="flex flex-col border-r border-neutral-300 w-full h-screen bg-white">
+        <div className={`${settingsView? 'block' : 'hidden'}  flex flex-col border-r border-neutral-300 w-full h-screen bg-white`}>
             <div className="flex w-full items-end bg-[linear-gradient(90deg,_rgba(236,15,227,1)_0%,_rgba(117,223,246,1)_100%)] h-[100px] px-[25px] gap-2">
-                <div className="text-white py-5">
-                    <FaArrowLeft />
+                <div className="text-white py-5 hover:cursor-pointer">
+                    <FaArrowLeft onClick={() => handleChats(true)}/>
                 </div>
                 <p className="text-2xl text-white pb-3 px-2">
                     Settings
