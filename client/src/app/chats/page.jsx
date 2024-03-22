@@ -1,11 +1,8 @@
 "use client";
-import { useState, useEffect } from "react";
 import LeftSidebar from "../../components/LeftMenu";
-import Profile from '../../components/Profile'
-import Settings from '../../components/Settings'
 import ChatDetail from "../../components/ChatDetail";
 import './profile.css'
-import { Provider } from "react-redux";
+import { Provider} from "react-redux";
 import rootStore from '../../store'
 
 export default function Chats() {

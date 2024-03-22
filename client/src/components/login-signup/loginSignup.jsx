@@ -1,8 +1,12 @@
 import './login-sign.css';
 import Login from './login'
 import SignUp from './signUp'
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useRouter } from 'next/navigation';
 
 export default function loginSignup() {
+  const router = useRouter()
     const handleSignUp = () =>{
      document.getElementsByClassName('login-signup-container')[0].classList.add("sign-up-mode");
     }
@@ -10,6 +14,14 @@ export default function loginSignup() {
      document.getElementsByClassName('login-signup-container')[0].classList.remove("sign-up-mode");
     }
     
+    // useEffect(() =>{
+    //   let user = useSelector((state)=>{
+    //     return state.users.userDetail
+    //   })
+    //   if(user!=null){
+    //     router.push("/chats")
+    //   }
+    // },[])
     return (
       <>
            <div className="login-signup-container">

@@ -2,17 +2,20 @@ import { FcGoogle } from "react-icons/fc";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup"
 import { toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import {FaEnvelope, FaLock } from "react-icons/fa";
+import { login } from "../../reducers/user.slicer";
 
 export default function Login() {
   let [disable, setDisable] = useState(false)
+  const dispatch = useDispatch()
   const router = useRouter();
   const schema = Yup.object({
     email: Yup.string().email().required(),
-    password: Yup.string().required().matches(/[a-zA-Z0-9]/).min(8)
+    password: Yup.string().required().matches(/(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/,"Password must contain at least a digit and a special character").min(8)
   })
   const formik = useFormik({
     initialValues: {
@@ -23,9 +26,13 @@ export default function Login() {
     onSubmit: async (values) => {
       try {
         setDisable(true)
-        router.push('/chats')
-        toast.success("Welcome to ChitChat")
-
+        if(values.email === "shresnayan@gmail.com" && values.password === "Nayan@07"){
+          dispatch(login(values))
+          router.push('/chats')
+          toast.success("Welcome to ChitChat")
+      }
+        else
+          toast.error("Credentials didn't match")
         // let auth_svc = new AuthService()
         // let loginResponse = await auth_svc.login(values)
         // if (loginResponse) {

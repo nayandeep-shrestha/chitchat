@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useRouter } from "next/navigation";
 import {pView, sView, chatColor} from '../reducers/settings.slicer'
 import Image from 'next/image';
 import { FaArrowLeft, FaBell } from "react-icons/fa";
 import { MdLock, MdColorLens,MdOutlineHelpOutline } from "react-icons/md";
 import { IoMdLogOut } from "react-icons/io";
 import { chat8 } from "../assets/whatsapp";
+import { logout } from "@/reducers/user.slicer";
 export default function Settings() {
     const dispatch = useDispatch()
+    const router = useRouter()
     const view = useSelector((state) => {
         return state.settings.view;
     })
@@ -21,6 +24,10 @@ export default function Settings() {
         e.preventDefault()
         dispatch(pView(true))
       }
+    const handleLogout = ()=>{
+        dispatch(logout(null))
+        router.push('/')
+    }
     return (
         <div className={`${view ? 'block' : 'hidden'}  flex flex-col border-r border-neutral-300 w-full h-screen bg-white`}>
             <div className="flex w-full items-end bg-[linear-gradient(90deg,_rgba(236,15,227,1)_0%,_rgba(117,223,246,1)_100%)] h-[100px] px-[25px] gap-2">
@@ -95,7 +102,7 @@ export default function Settings() {
                         </div>
                    
                 </div>
-                <div className={`flex justify-between items-center cursor-pointer w-full h-fit px-8 py-3 hover:bg-[#f0f2f5] mb-3 hover:text-red-400`}>
+                <div className={`flex justify-between items-center cursor-pointer w-full h-fit px-8 py-3 hover:bg-[#f0f2f5] mb-3 hover:text-red-400`} onClick={handleLogout}>
                     {/* Icon */}
                     <IoMdLogOut className="rounded-full w-[50px] mr-5 text-[22px]"/>
 

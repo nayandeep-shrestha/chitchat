@@ -6,7 +6,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Picker from 'emoji-picker-react';
 
-function Message({ msg, time, isLink, file, sent, key }) {
+function Message({ msg, time, isLink, file, sent, ind }) {
   const [showReaction, setShowReaction] = useState(false)
   const [reactEmoji, setReactEmoji] = useState('')
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,7 +24,7 @@ function Message({ msg, time, isLink, file, sent, key }) {
   }
 
   return (
-    <div key={key} className={`${reactEmoji?"mb-7" : ""}`}>
+    <div key={ind} className={`${reactEmoji?"mb-7" : ""}`}>
       {/*Message container */}
       <div
         className={`relative flex justify-center items-center rounded-md w-fit my-1 ${sent ? "bg-[#e9bffd] ml-auto" : "bg-[#ffffff] mr-auto"
@@ -47,7 +47,7 @@ function Message({ msg, time, isLink, file, sent, key }) {
             <p className="absolute right-1 bottom-2 text-white text-[10px] min-w-[50px]">
               {time}
             </p>
-            <div className="rounded-full bg-white w-fit h-fit flex items-center absolute bottom-0 left-0">
+            <div className="rounded-full bg-white w-fit h-fit flex items-center absolute top-[98%] right-[-15px]">
               {reactEmoji}
             </div>
           </div>

@@ -8,7 +8,7 @@ import { HiDotsVertical, HiOutlineLink } from "react-icons/hi";
 import { IoImageOutline } from "react-icons/io5";
 import { BiHappy } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
-import { cs1, cs2 } from "../assets/whatsapp";
+import { chat10 } from "../assets/whatsapp";
 import { getTime } from "../logic/whatsapp";
 import Image from "next/image";
 import Picker from 'emoji-picker-react';
@@ -41,9 +41,10 @@ function ChatDetail() {
   }
 
   const handleInputSubmit = () => {
-    console.log(file)
-    if (inputRef.current.value.length > 0 || file) {
+    // if(inputRef.current.value.length > 0){
 
+    // }
+    if (inputRef.current.value.length > 0 ) {
       addMessage({
         msg: inputRef.current.value,
         file:file,
@@ -51,6 +52,7 @@ function ChatDetail() {
         sent: true,
       });
       inputRef.current.value = " ";
+      setMessage('')
       setFile('')
       inputRef.current.focus();
     }
@@ -79,7 +81,7 @@ function ChatDetail() {
         <div className="flex items-center">
           {/* Profile picture */}
           <Image
-            src={cs1}
+            src={chat10}
             alt="profile_picture"
             className="rounded-full w-[45px] h-[45px] mr-5"
           />
@@ -87,7 +89,7 @@ function ChatDetail() {
           {/* Info */}
           <div className="flex flex-col">
             {/* Contact */}
-            <h1 className="text-[#111b21] font-medium">Coding Spot</h1>
+            <h1 className="text-[#111b21] font-medium">Abhishek</h1>
 
             {/* Status */}
             <p className="text-[#8796a1] text-xs">online</p>
@@ -96,7 +98,8 @@ function ChatDetail() {
 
         {/* Buttons */}
         <div className="flex justify-between items-center w-[85px]">
-          <RoundedBtn icon={<MdSearch />} />
+          {/* <RoundedBtn icon={<MdSearch />} /> */}
+          <div></div>
           <RoundedBtn icon={<HiDotsVertical />} />
         </div>
       </div>
@@ -108,7 +111,7 @@ function ChatDetail() {
         onClick={() => {}}
       >
         {messages.map((msg, index) => (
-          <Message key={index}
+          <Message ind={index}
             msg={msg.msg}
             time={msg.time}
             isLink={msg.isLink}
