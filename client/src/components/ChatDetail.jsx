@@ -44,7 +44,7 @@ function ChatDetail() {
     // if(inputRef.current.value.length > 0){
 
     // }
-    if (inputRef.current.value.length > 0 ) {
+    if (inputRef.current.value.length > 0 || file) {
       addMessage({
         msg: inputRef.current.value,
         file:file,
