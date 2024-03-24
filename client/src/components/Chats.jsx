@@ -19,7 +19,6 @@ function Chats({ filter }) {
       {chats.map((chat, i) => {
         return (
           <Chat
-            key={i}
             pp={chat.pp}
             contact={chat.contact}
             msg={chat.msg}
