@@ -9,6 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import {FaEnvelope, FaLock } from "react-icons/fa";
 import { login } from "../../reducers/user.slicer";
 
+
+import Glogin from "../../../../server/firebaselogin";
+
 export default function Login() {
   let [disable, setDisable] = useState(false)
   const dispatch = useDispatch()
@@ -80,7 +83,7 @@ export default function Login() {
       <p className="social-text">Or Sign in with Google</p>
       <div className="social-media">
         <a href="#" className="social-icon">
-          <FcGoogle />
+          <button type="button" onClick={Glogin}><FcGoogle /></button>
         </a>
       </div>
     </form>
