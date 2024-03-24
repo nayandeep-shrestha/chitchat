@@ -43,7 +43,7 @@ function LeftMenu() {
 
         <div className="flex justify-between items-center bg-[#f0f2f5] h-[60px] p-3">
 
-          <Image src={appName} className="w-[200px]" />
+          <Image src={appName} className="w-[200px]" alt="" />
           <FiEdit className="text-[#8796a1] text-[40px] p-2  hover:text-[#616b71] hover:cursor-pointer" />
         </div>
 
@@ -71,7 +71,7 @@ function LeftMenu() {
 
         <div className="flex justify-between items-center bg-[#f0f2f5] w-full h-[60px] p-3">
           <div className="flex justify-evenly items-center flex-60 hover:cursor-pointer" onClick={handleProfile}>
-            <Image src={chat8} className="rounded-full w-[45px]"  />
+            <Image src={chat8} className="rounded-full w-[45px]" alt=""  />
             <h1 className={`mb-1 text-[#111b21] font-medium`}>Nayandeep Shrestha</h1>
           </div>
             <div>

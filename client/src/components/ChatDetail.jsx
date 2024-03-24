@@ -111,7 +111,7 @@ function ChatDetail() {
         onClick={() => {}}
       >
         {messages.map((msg, index) => (
-          <Message ind={index}
+          <Message key={index} ind={index}
             msg={msg.msg}
             time={msg.time}
             isLink={msg.isLink}
