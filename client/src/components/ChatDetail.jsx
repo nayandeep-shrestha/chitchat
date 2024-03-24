@@ -45,6 +45,27 @@ function ChatDetail() {
   };
 
   const handleInputSubmit = () => {
+
+    // --------------- Add to DB ------------------
+
+    const time = getTime();
+    // const message = encryptWithAES(message);
+    const messageText = inputRef.current.value;
+    // console.log("message from input ref is ",  inputRef.current.value);
+    console.log("message from input ref is ", inputRef, inputRef.current, inputRef.current.value);
+
+    const message = new MessageObj("nayandeepAbhishekchat", messageText, true, time);
+    const messageObj = {
+      chatId: "nayandeepAbhishekchat",
+      message: messageText,
+      sent: true,
+      time: time,
+    };
+
+    addMessageToDB(messageObj);
+
+    // --------------- Add to DB ------------------
+
     // if(inputRef.current.value.length > 0){
 
     // }
@@ -55,25 +76,11 @@ function ChatDetail() {
         time: getTime(),
         sent: true,
       });
-      inputRef.current.value = " ";
+      inputRef.current.value = "";
       setMessage("");
       setFile("");
       inputRef.current.focus();
     }
-    // --------------- Add to DB ------------------
-
-    const time = getTime();
-    // const message = encryptWithAES(message);
-    const messageText = inputRef.current.value;
-
-    const message = new MessageObj("nayandeepAbhishekchat", messageText, true, time);
-    const messageObj = {
-      chatId: "nayandeepAbhishekchat",
-      message: messageText,
-      sent: true,
-      time: time,
-    };
-    addMessageToDB(messageObj);
   };
 
   useEffect(() => {
@@ -130,8 +137,8 @@ function ChatDetail() {
       >
         {messages.map((msg, index) => (
           <Message
-            ind={index}
             key={msg.msg}
+            ind={index}
             msg={msg.msg}
             time={msg.time}
             isLink={msg.isLink}
