@@ -56,6 +56,8 @@ export default function Login() {
         }
     })
 
+
+    //auth with google using firebase
     async function handleGLogin() {
         const response = await GLogin();
         console.log(response);
