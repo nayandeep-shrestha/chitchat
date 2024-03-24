@@ -6,13 +6,17 @@ const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 
-function Glogin(){
-    signInWithPopup(auth, provider)
+async function GLogin(){
+    return signInWithPopup(auth, provider)
         .then((result)=>{
-            console.log(result.user);
+            return {
+                displayName: result.user.displayName,
+                email: result.user.email,
+                emailVerified: result.user.emailVerified,
+            }
         }).catch((error)=>{
             console.log(error);
         })
 }
 
-export default Glogin;
+export default GLogin;
