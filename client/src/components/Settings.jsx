@@ -51,7 +51,7 @@ export default function Settings() {
             {/* Profile Name */}
             <div className="flex flex-row py-5 px-8 gap-6 hover:cursor-pointer hover:bg-[#f0f2f5]" onClick={handleProfile}>
                 <div className="rounded-full w-fit h-fit">
-                    <Image src={chat8} width={50} height={50} />
+                    <Image src={chat8} width={50} height={50} alt="" />
                 </div>
                 <div className="flex flex-col">
                     <span>Nayandeep Shrestha</span>

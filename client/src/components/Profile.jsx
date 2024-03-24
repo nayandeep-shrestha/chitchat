@@ -29,7 +29,7 @@ export default function Profile() {
             {/* profile picture */}
             <div className="h-[200px] flex justify-center mt-5">
                 <div className="rounded-full bg-white relative w-fit h-fit">
-                    <Image src={chat8} className="h-[150px] w-[150px] hover:cursor-pointer" />
+                    <Image src={chat8} className="h-[150px] w-[150px] hover:cursor-pointer" alt="" />
                     <div className="absolute inset-0 bg-black opacity-50 rounded-full"></div>
                     <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-300">
                         <FaCamera/> 

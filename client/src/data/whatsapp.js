@@ -18,6 +18,7 @@ import {
 
 export const chatsData = [
   {
+    id: "234", 
     pp: chat10,
     contact: "Abhishek",
     msg: "Awesome, thank you!",
@@ -25,6 +26,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
+    id: "24", 
     contact: "Nischal",
     pp: chat7,
     msg: "hahhahhaha lol 😂😂😂",
@@ -32,13 +34,15 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
+    id: "22344", 
     pp: chat1,
-    contact: "Tom",
-    msg: "Coding Spot is fire! 🔥",
+    contact: "Dev",
+    msg: "Niceee",
     time: "12:15 pm",
     unreadMsgs: 2,
   },
   {
+    id: "2342890", 
     pp: chat3,
     contact: "Dad",
     msg: "Hey dad, need you asap!!",
@@ -46,6 +50,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
+    id: "89023", 
     pp: chat4,
     contact: "+00 123 4567890",
     msg: "Who are you???",
@@ -53,6 +58,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
+    id: "20938", 
     pp: chat5,
     contact: "Coders </>",
     msg: "Help me with this bug!! 😭😭",
@@ -60,13 +66,13 @@ export const chatsData = [
     unreadMsgs: 23,
   },
   {
+    id: "202211", 
     pp: chat6,
     contact: "Mom",
     msg: "Call me son, love you. ❤️",
     time: "10:35 am",
     unreadMsgs: 2,
   },
-
 ];
 
 export const messagesData = [
@@ -149,14 +155,49 @@ export const messagesData = [
   },
 ];
 
-export const messageOptions=[
+export const messageOptions = [
   {
-    title: 'Reply'
+    title: "Reply",
   },
   {
-    title: 'React'
+    title: "React",
   },
   {
-    title: 'Delete'
+    title: "Delete",
   },
-]
+];
+
+// SCHEMA
+// const messages = [
+//   {
+//     message: "Hii",
+//     time: "10:20 PM",
+//     chatId: "F3078",
+//     sender: "Nayandeep8234",
+//     sent: true,
+//   },
+// ];
+
+// const users = [
+//   {
+//     id: "abhish342wr",
+//     email: "abhishek@gmail.com",
+//     name: "Abhishek Acharya",
+//     chatList: [{ id: "ASDK4" }, { id: "KSD42" }],
+//   },
+// ];
+
+// const chats = [
+//   {
+//     chatId: "ASDK4",
+//     messages: [
+//       {
+//         message: "Hii",
+//         time: "10:20 PM",
+//         sender: "Nayandeep",
+//         sent: true,
+//         // chatId: "ASDK4",
+//       },
+//     ],
+//   },
+// ];

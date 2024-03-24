@@ -83,11 +83,11 @@ function Message({ msg, time, isLink, file, sent, ind }) {
           : (<></>)}
 
         <div className=" items-start p-1">
-          <BsThreeDotsVertical id="basic-button"
+          {/* <BsThreeDotsVertical id="basic-button"
             aria-controls={open ? 'basic-menu' : undefined}
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick} className="text-[#8796a1] hover:text-[#42494d] hover:cursor-pointer text-xs" />
+            onClick={handleClick} className="text-[#8796a1] hover:text-[#42494d] hover:cursor-pointer text-xs" /> */}
 
         </div>
 
@@ -96,7 +96,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
         </div>
       </div>
 
-      <Menu
+      {/* <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
@@ -108,7 +108,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
         <MenuItem onClick={handleClose} className="text-sm">Reply</MenuItem>
         <MenuItem onClick={() => { setShowReaction(true); setAnchorEl(null); }}>React</MenuItem>
         <MenuItem onClick={handleClose}>Delete</MenuItem>
-      </Menu>
+      </Menu> */}
     </div>
   );
 }

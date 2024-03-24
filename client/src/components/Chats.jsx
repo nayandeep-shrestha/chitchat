@@ -6,9 +6,7 @@ function Chats({ filter }) {
   const [chats, setChats] = useState(chatsData);
 
   useEffect(() => {
-    const newChats = filter
-      ? chatsData.filter((chat) => chat.unreadMsgs)
-      : chatsData;
+    const newChats = filter ? chatsData.filter((chat) => chat.unreadMsgs) : chatsData;
     setChats(newChats);
   }, [filter]);
 
@@ -19,6 +17,7 @@ function Chats({ filter }) {
       {chats.map((chat, i) => {
         return (
           <Chat
+            key={chat.id}
             pp={chat.pp}
             contact={chat.contact}
             msg={chat.msg}
