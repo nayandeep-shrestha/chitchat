@@ -18,7 +18,7 @@ function LeftMenu() {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState(false);
   const user = useSelector((state)=> {
-    return state.users;
+    return state.users.userDetail;
   })
   const view = useSelector((state) => {
     return state.settings.view
@@ -75,7 +75,7 @@ function LeftMenu() {
         <div className="flex justify-between items-center bg-[#f0f2f5] w-full h-[60px] p-3">
           <div className="flex justify-evenly items-center flex-60 hover:cursor-pointer" onClick={handleProfile}>
             <Image src={chat8} className="rounded-full w-[45px]" alt=""  />
-            <h1 className={`mb-1 text-[#111b21] font-medium`}>{user.profileName}</h1>
+            <h1 className={`mb-1 text-[#111b21] font-medium`}>{user.name}</h1>
           </div>
             <div>
               <FaGear className="text-[#8796a1] text-[40px] p-2  hover:text-[#616b71] hover:cursor-pointer hover:rotate-90 duration-300" onClick={handleSettings} />

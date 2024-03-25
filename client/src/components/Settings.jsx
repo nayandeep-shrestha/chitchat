@@ -14,6 +14,9 @@ export default function Settings() {
     const view = useSelector((state) => {
         return state.settings.view;
     })
+    const user = useSelector((state) => {
+        return state.users.userDetail;
+    });
     const handleClick = () => dispatch(sView(false))
     const handleChatColorView = (e) => {
         e.preventDefault();
@@ -54,7 +57,7 @@ export default function Settings() {
                     <Image src={chat8} width={50} height={50} alt="" />
                 </div>
                 <div className="flex flex-col">
-                    <span>Nayandeep Shrestha</span>
+                    <span>{user.name}</span>
                     <span className="text-[#8796a1] text-xs">Hey there! I am using Chitchat</span>
                 </div>
             </div>
