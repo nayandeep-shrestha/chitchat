@@ -45,14 +45,18 @@ function ChatDetail() {
   };
 
   const handleInputSubmit = () => {
-
     // --------------- Add to DB ------------------
 
     const time = getTime();
     // const message = encryptWithAES(message);
     const messageText = inputRef.current.value;
     // console.log("message from input ref is ",  inputRef.current.value);
-    console.log("message from input ref is ", inputRef, inputRef.current, inputRef.current.value);
+    console.log(
+      "message from input ref is ",
+      inputRef,
+      inputRef.current,
+      inputRef.current.value
+    );
 
     const message = new MessageObj("nayandeepAbhishekchat", messageText, true, time);
     const messageObj = {
@@ -135,17 +139,20 @@ function ChatDetail() {
         style={{ padding: "12px 7%", backgroundColor: chatColor }}
         onClick={() => {}}
       >
-        {messages.map((msg, index) => (
-          <Message
-            key={msg.msg}
-            ind={index}
-            msg={msg.msg}
-            time={msg.time}
-            isLink={msg.isLink}
-            file={msg.file}
-            sent={msg.sent}
-          />
-        ))}
+        <>
+          {messages.map((msg) => (
+            <div key={msg.id}>
+              <Message
+                key={msg.id}
+                msg={msg.msg}
+                time={msg.time}
+                isLink={msg.isLink}
+                file={msg.file}
+                sent={msg.sent}
+              />
+            </div>
+          ))}
+        </>
         <div ref={bottomRef} />
       </div>
 
