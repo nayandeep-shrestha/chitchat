@@ -6,7 +6,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Picker from 'emoji-picker-react';
 
-function Message({ msg, time, isLink, file, sent, ind }) {
+function Message({ msg, time, isLink, file, sent }) {
   const [showReaction, setShowReaction] = useState(false)
   const [reactEmoji, setReactEmoji] = useState('')
   const [anchorEl, setAnchorEl] = useState(null);
@@ -24,7 +24,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
   }
 
   return (
-    <div key={msg} className={`${reactEmoji?"mb-7" : ""}`}>
+    <div className={`${reactEmoji?"mb-7" : ""}`}>
       {/*Message container */}
       <div
         className={`relative flex justify-center items-center rounded-md w-fit my-1 ${sent ? "bg-[#e9bffd] ml-auto" : "bg-[#ffffff] mr-auto"
@@ -33,7 +33,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
 
         {/* Image message */}
         {file ? (
-          <div className="relative w-full p-2">
+          <div key="file" className="relative w-full p-2">
             {/* Image */}
             <Image
               src={file}
@@ -56,6 +56,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
         {/* // Text (link/normal) message */}
         {msg ? (
           <div
+          key="messaage"
             className="flex justify-between items-end max-w-[410px] px-2 pt-2 pb-4 relative"
             style={{ wordBreak: "break-word" }}
           >
@@ -92,7 +93,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
         </div>
 
         <div className={`${showReaction ? 'block' : 'hidden'} z-10 top-full absolute ${sent ? "right-2/3" : "left-3/4"}`}>
-          <Picker reactionsDefaultOpen={true} onReactionClick={handleReaction}></Picker>
+          {/* <Picker reactionsDefaultOpen={true} onReactionClick={handleReaction}></Picker> */}
         </div>
       </div>
 

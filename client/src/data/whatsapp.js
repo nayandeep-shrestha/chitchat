@@ -18,7 +18,7 @@ import {
 
 export const chatsData = [
   {
-    id: "234", 
+    id: "234",
     pp: chat10,
     contact: "Abhishek",
     msg: "Awesome, thank you!",
@@ -26,7 +26,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
-    id: "24", 
+    id: "24",
     contact: "Nischal",
     pp: chat7,
     msg: "hahhahhaha lol 😂😂😂",
@@ -34,7 +34,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
-    id: "22344", 
+    id: "22344",
     pp: chat1,
     contact: "Dev",
     msg: "Niceee",
@@ -42,7 +42,7 @@ export const chatsData = [
     unreadMsgs: 2,
   },
   {
-    id: "2342890", 
+    id: "2342890",
     pp: chat3,
     contact: "Dad",
     msg: "Hey dad, need you asap!!",
@@ -50,7 +50,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
-    id: "89023", 
+    id: "89023",
     pp: chat4,
     contact: "+00 123 4567890",
     msg: "Who are you???",
@@ -58,7 +58,7 @@ export const chatsData = [
     unreadMsgs: null,
   },
   {
-    id: "20938", 
+    id: "20938",
     pp: chat5,
     contact: "Coders </>",
     msg: "Help me with this bug!! 😭😭",
@@ -66,7 +66,7 @@ export const chatsData = [
     unreadMsgs: 23,
   },
   {
-    id: "202211", 
+    id: "202211",
     pp: chat6,
     contact: "Mom",
     msg: "Call me son, love you. ❤️",
@@ -77,78 +77,93 @@ export const chatsData = [
 
 export const messagesData = [
   {
+    id: "01",
     msg: "Hey wassupp bro!",
     time: "10:58 am",
     sent: true,
   },
   {
+    id: "02",
     msg: "This WhatsApp clone is firee 🔥",
     time: "10:58 am",
     sent: true,
   },
   {
+    id: "03",
     msg: "Keep it up! 👍👍👍",
     time: "10:59 am",
     sent: true,
   },
   {
+    id: "04",
     msg: "Thanks a lot! 😀",
     time: "11:15 am",
     sent: false,
   },
   {
+    id: "05",
     msg: "Make sure to follow all my socials! 👌👌",
     time: "11:15 am",
     sent: false,
   },
   {
+    id: "06",
     msg: "I will! what's your Github?",
     time: "11:28 am",
     sent: true,
   },
   {
+    id: "07",
     msg: "AlejoG10",
     time: "11:36 am",
     sent: false,
   },
   {
+    id:"08",
     msg: "https://github.com/AlejoG10",
     isLink: true,
     time: "11:36 am",
     sent: false,
   },
   {
+    id: "09",
     msg: "And your YouTube channel?",
     time: "11:47 am",
     sent: true,
   },
   {
+    id: "10",
     msg: "Coding Spot",
     time: "11:55 am",
     sent: false,
   },
   {
+    id: "11",
     msg: "https://www.youtube.com/channel/UCLqXQLK6zKZg0trhanjAkkQ",
     isLink: true,
     time: "11:55 am",
     sent: false,
   },
   {
+    id: "12",
     img: cs2,
     time: "11:56 am",
     sent: false,
   },
   {
+    id: "14",
     msg: "Niceeee channel! 🔥💯",
     time: "12:35 pm",
     sent: true,
   },
   {
+    id: "15",
     msg: "I will see all of your videos 😉",
     time: "12:35 pm",
     sent: true,
   },
   {
+    id: "16",
     msg: "Awesome, thank for your support! 🙌",
     time: "1:15 pm",
     sent: false,
