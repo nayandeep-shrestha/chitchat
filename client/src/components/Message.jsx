@@ -24,7 +24,7 @@ function Message({ msg, time, isLink, file, sent, ind }) {
   }
 
   return (
-    <div className={`${reactEmoji?"mb-7" : ""}`}>
+    <div key={msg} className={`${reactEmoji?"mb-7" : ""}`}>
       {/*Message container */}
       <div
         className={`relative flex justify-center items-center rounded-md w-fit my-1 ${sent ? "bg-[#e9bffd] ml-auto" : "bg-[#ffffff] mr-auto"
