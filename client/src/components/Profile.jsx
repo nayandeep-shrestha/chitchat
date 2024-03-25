@@ -11,7 +11,7 @@ export default function Profile() {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => {
-    return state.users;
+    return state.users.userDetail;
   });
 
   console.table(user);
@@ -78,7 +78,7 @@ export default function Profile() {
                   : "focus:bg-white border-b  border-[#a0a0a0] ",
               ]}`}
               // defaultValue="Nayandeep Shrestha"
-              value={userInfo?.name}
+              value={user.name}
               onChange={(e) => {
                 setUserInfo((prev) => ({ ...prev, name: e.target.value }));
               }}
