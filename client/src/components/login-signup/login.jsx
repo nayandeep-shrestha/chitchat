@@ -68,7 +68,7 @@ export default function Login() {
                 chats: []
             }
         );
-        console.log(userLoginRes);
+        dispatch(login(userLoginRes));
         router.push("/chats");
     }
 

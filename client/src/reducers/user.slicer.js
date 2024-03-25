@@ -3,7 +3,11 @@ import {createSlice} from '@reduxjs/toolkit'
 const UserSlicer = createSlice({
     name: 'users',
     initialState:{
-        userDetail: null,
+        userDetail: {
+                email: 'user@gmail.com',
+                name : 'user user',
+                chats: []
+            },
     },
     reducers:{
         login:((state,action) => {
