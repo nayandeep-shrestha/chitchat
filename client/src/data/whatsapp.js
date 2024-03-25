@@ -20,18 +20,32 @@ export const chatsData = [
   {
     id: "234",
     pp: chat10,
-    contact: "Abhishek",
+    contact: "Abhishek Acharya",
     msg: "Awesome, thank you!",
     time: "1:15 pm",
     unreadMsgs: null,
+    chatList: [ {
+        id: "01",
+        msg: "Hey wassupp bro!",
+        time: "10:58 am",
+        sent: true,
+      },
+      {
+        id: "02",
+        msg: "This WhatsApp clone is firee 🔥",
+        time: "10:58 am",
+        sent: true,
+      },
+    ],
   },
   {
     id: "24",
-    contact: "Nischal",
+    contact: "Nischal Bhandari",
     pp: chat7,
     msg: "hahhahhaha lol 😂😂😂",
     time: "10:18 am",
     unreadMsgs: null,
+    chatList: [],
   },
   {
     id: "22344",
@@ -40,6 +54,7 @@ export const chatsData = [
     msg: "Niceee",
     time: "12:15 pm",
     unreadMsgs: 2,
+    chatList: [],
   },
   {
     id: "2342890",
@@ -48,6 +63,7 @@ export const chatsData = [
     msg: "Hey dad, need you asap!!",
     time: "11:04 am",
     unreadMsgs: null,
+    chatList: [],
   },
   {
     id: "89023",
@@ -56,6 +72,7 @@ export const chatsData = [
     msg: "Who are you???",
     time: "10:58 am",
     unreadMsgs: null,
+    chatList: [],
   },
   {
     id: "20938",
@@ -64,6 +81,7 @@ export const chatsData = [
     msg: "Help me with this bug!! 😭😭",
     time: "10:50 am",
     unreadMsgs: 23,
+    chatList: [],
   },
   {
     id: "202211",
@@ -72,6 +90,7 @@ export const chatsData = [
     msg: "Call me son, love you. ❤️",
     time: "10:35 am",
     unreadMsgs: 2,
+    chatList: [],
   },
 ];
 
@@ -119,7 +138,7 @@ export const messagesData = [
     sent: false,
   },
   {
-    id:"08",
+    id: "08",
     msg: "https://github.com/AlejoG10",
     isLink: true,
     time: "11:36 am",
