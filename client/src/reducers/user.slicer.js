@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const UserSlicer = createSlice({
+
 	name: "users",
 	initialState: {
 		userDetail: {
@@ -30,3 +31,4 @@ const UserSlicer = createSlice({
 
 export const { login, logout, setProfileName, setBio } = UserSlicer.actions;
 export default UserSlicer.reducer;
+

@@ -12,6 +12,7 @@ export default function Profile() {
 
   const user = useSelector((state) => {
     return state.users.userDetail;
+
   });
 
   console.table(user);
@@ -79,6 +80,7 @@ export default function Profile() {
               ]}`}
               // defaultValue="Nayandeep Shrestha"
               value={user.name}
+
               onChange={(e) => {
                 setUserInfo((prev) => ({ ...prev, name: e.target.value }));
               }}
