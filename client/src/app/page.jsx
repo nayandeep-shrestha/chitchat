@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
     <Provider store={rootStore}>
-    <ToastContainer autoClose={2000} />
+    <ToastContainer autoClose={10} />
     <LoginSignup/>
     </Provider>
     </>
