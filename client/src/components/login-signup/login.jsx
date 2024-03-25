@@ -11,6 +11,7 @@ import { login } from "../../reducers/user.slicer";
 
 
 import GLogin from "../../../../server/firebaselogin";
+import {addUserToDB} from "../../../../server/addUser";
 
 export default function Login() {
     let [disable, setDisable] = useState(false)
@@ -60,7 +61,14 @@ export default function Login() {
     //auth with google using firebase
     async function handleGLogin() {
         const response = await GLogin();
-        console.log(response);
+        const userLoginRes = await addUserToDB(
+            {
+                email: response.email,
+                name : response.displayName,
+                chats: []
+            }
+        );
+        console.log(userLoginRes);
         router.push("/chats");
     }
 
