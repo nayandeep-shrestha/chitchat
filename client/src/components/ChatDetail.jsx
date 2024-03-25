@@ -16,21 +16,32 @@ import FAB from "../components/Common/FAB";
 import { MessageObj } from "./../../../server/config/schema";
 import { addMessageToDB } from "./../../../server/addMessage";
 import { Paper } from "@mui/material";
+import { v4 as uuidv4 } from 'uuid';
+
 
 function ChatDetail() {
   const [messages, setMessages] = useState(messagesData);
+  const [message, setMessage] = useState("");
+
   const [showEmojis, setShowEmojis] = useState(false);
   const [uploadIcon, setUploadIcon] = useState(false);
-  const [message, setMessage] = useState("");
+
   const [file, setFile] = useState("");
   const fileRef = useRef(null);
+
   const imgRef = useRef(null);
+
   const inputRef = useRef(null);
   const bottomRef = useRef(null);
   const chatColor = useSelector((state) => {
     return state.colors.selectedColor;
   });
   // Functions
+
+  useEffect(() => {
+    // fetch from firebase
+    
+  }, [])
 
   const addMessage = (msg) => {
     const newMessages = [...messages, msg];
@@ -50,14 +61,6 @@ function ChatDetail() {
     const time = getTime();
     // const message = encryptWithAES(message);
     const messageText = inputRef.current.value;
-    // console.log("message from input ref is ",  inputRef.current.value);
-    console.log(
-      "message from input ref is ",
-      inputRef,
-      inputRef.current,
-      inputRef.current.value
-    );
-
     const message = new MessageObj("nayandeepAbhishekchat", messageText, true, time);
     const messageObj = {
       chatId: "nayandeepAbhishekchat",
@@ -75,6 +78,7 @@ function ChatDetail() {
     // }
     if (inputRef.current.value.length > 0 || file) {
       addMessage({
+        id: uuidv4(), 
         msg: inputRef.current.value,
         file: file,
         time: getTime(),
